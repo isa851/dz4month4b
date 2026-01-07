@@ -1,0 +1,8 @@
+from django.db import models
+
+# Create your models here.
+class Base(models.Model):
+    title = models.CharField(max_length=255,verbose_name='Название')
+    class Meta:
+        verbose_name = 'Базовый'
+        verbose_name_plural = 'Базовые'
