@@ -24,3 +24,10 @@ class Menu(models.Model):
     class Meta:
         verbose_name = 'меню'
         verbose_name_plural = 'меню'
+        
+
+class Contact(models.Model):
+    title = models.CharField(max_length=255,verbose_name='Название')
+    description = models.TextField(verbose_name='описание')
+    phone = models.CharField(max_length=255,verbose_name='номер')
+    adres = models.CharField(max_length=255,verbose_name='адрес')

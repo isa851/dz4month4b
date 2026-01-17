@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -10,11 +11,10 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<!-- Bootstrap CSS -->
-		<link rel='stylesheet' id='dina-bootstrap-css-css'  href='css/bootstrap/css/bootstrap.min.css' type='text/css' media='all' />
-		<!-- Font Awesome Icons CSS -->
-		<link rel='stylesheet' id='dina-font-awesome-css'  href='css/fontawesome/css/font-awesome.min.css' type='text/css' media='all' />
-		<!-- Main CSS File -->
-		<link rel='stylesheet' id='dina-style-css-css'  href='style.css' type='text/css' media='all' />
+		 <link rel="stylesheet" href="{% static 'assets/css/bootstrap/css/bootstrap.min.css' %}">
+		 <link rel="stylesheet" href="{% static 'assets/css/fontawesome/css/font-awesome.min.css' %}">
+		 <link rel="stylesheet" href="{% static 'assets/css/fontawesome/css/all.min.css' %}">
+		 <link rel="stylesheet" href="{% static 'assets/style.css' %}">
 		<!-- favicons -->
 		<link rel="icon" href="images/icons/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" href="images/icons/favicon-192x192.png" sizes="192x192" />
@@ -153,13 +153,13 @@
 				<nav class="navbar-1">
 					<!-- TOP LEFT PAGE TEXT  -->
 					<div class="top-location">
-						<span class="info-txt">40 Park Ave, Brooklyn, </span>
+						<span class="info-txt">{{ contact.adres }}</span>
 						<span class="info-txt">New York 70250</span>   
 					</div>
 					<!-- TOP RIGHT PAGE TEXT  -->
 					<div class="book-now">
 						<span class="info-txt">Book Now</span>
-						<span class="info-txt">+1-222-333-444</span>   
+						<span class="info-txt">{{ contact.phone }}</span>   
 					</div>
 					<!-- MOBILE BUTTON NAV  -->
 					<div class="nav-button-holder nav-btn-mobile inactive">
@@ -281,10 +281,10 @@
 		<!-- TOP IMAGE HEADER -->
 		<section class="topSingleBkg topPageBkg">
 			<div class="item-content-bkg">
-				<div class="item-img"  style="background-image:url('images/top-headers/top-img-6.jpg');" ></div>
+				<div class="item-img"  style="background-image:url('{% static 'assets/images/top-headers/top-img-6.jpg' %}');" ></div>
 				<div class="inner-desc">
-					<h1 class="post-title single-post-title">Contact 2</h1>
-					<span class="post-subtitle"> We love to hear from you</span>
+					<h1 class="post-title single-post-title">{{ contact.title }}</h1>
+					<span class="post-subtitle">{{ contact.description }}</span>
 				</div>
 			</div>
 		</section>
@@ -304,7 +304,7 @@
 					<div class="col-md-4 mobile-margin-b48 alignc">
 						<img class="img-fluid margin-b24" src="images/gallery/gallery-2.jpg" alt="">
 						<h2 class="home-title home-title-small margin-b32 title-headline">New York</h2>
-						<p>40 Park Ave, Brooklyn, New York 70250<br>
+						<p>40 Park Ave, B 70250<br>
 							1-800-000-111 // <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97f4f8f9e3f6f4e3d7f2eff6fae7fbf2b9f4f8fa">[email&#160;protected]</a>
 						</p>
 						<div class="margin-t32"><a href="#" class="view-more">Get Directions</a></div>
@@ -434,17 +434,14 @@
 		<!-- /FOOTER -->
 		<!-- JS --> 
 		<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script  src='js/jquery.js'></script>
-		<script  src='js/jquery-migrate.min.js'></script>
-		<script  src='css/bootstrap/js/popper.min.js'></script>
-		<script  src='css/bootstrap/js/bootstrap.min.js'></script>
-		<script  src='js/jquery.easing.min.js'></script>
-		<script  src='js/jquery.fitvids.js'></script>
-		<script  src='js/jquery.magnific-popup.min.js'></script>
-		<script  src='js/owl-carousel/owl.carousel.min.js'></script>
-		<!-- MAIN JS -->
-		<script  src='js/init.js'></script>
-		<!-- CONTACT FORM JS -->
-		<script  src='js/jquery.form.min.js'></script>
-		<script  src='js/contactform.js'></script>
+		<script src="{% static 'assets/js/jquery.js' %}"></script>
+		<script src="{% static 'assets/js/jquery-migrate.min.js' %}"></script>
+		<script src="{% static 'assets/css/bootstrap/js/popper.min.js' %}"></script>
+		<script src="{% static 'css/bootstrap/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+		<script src="{% static 'assets/js/owl-carousel/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'assets/js/init.js' %}"></script>
 	</body>
 </html>
