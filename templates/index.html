@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -10,11 +12,9 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 		<!-- Bootstrap CSS -->
-		<link rel='stylesheet' id='dina-bootstrap-css-css'  href='css/bootstrap/css/bootstrap.min.css' type='text/css' media='all' />
-		<!-- Font Awesome Icons CSS -->
-		<link rel='stylesheet' id='dina-font-awesome-css'  href='css/fontawesome/css/font-awesome.min.css' type='text/css' media='all' />
-		<!-- Main CSS File -->
-		<link rel='stylesheet' id='dina-style-css-css'  href='style.css' type='text/css' media='all' />
+		<link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/fontawesome/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'css/fontawesome/css/all.min.css' %}">
 		<!-- favicons -->
 		<link rel="icon" href="images/icons/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" href="images/icons/favicon-192x192.png" sizes="192x192" />
@@ -715,15 +715,15 @@
 		</footer>
 		<!-- /FOOTER -->
 		<!-- JS --> 
-		<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script  src='js/jquery.js'></script>
-		<script  src='js/jquery-migrate.min.js'></script>
-		<script  src='css/bootstrap/js/popper.min.js'></script>
-		<script  src='css/bootstrap/js/bootstrap.min.js'></script>
-		<script  src='js/jquery.easing.min.js'></script>
-		<script  src='js/jquery.fitvids.js'></script>
-		<script  src='js/jquery.magnific-popup.min.js'></script>
-		<script  src='js/owl-carousel/owl.carousel.min.js'></script>
-		<!-- MAIN JS -->
-		<script  src='js/init.js'></script>
+		<script src="{% static 'js/jquery.js' %}"></script>
+		<script src="{% static 'js/jquery-migrate.min.js' %}"></script>
+		<script src="{% static 'css/bootstrap/js/popper.min.js' %}"></script>
+		<script src="{% static 'css/bootstrap/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+		<script src="{% static 'js/jquery.fitvids.js' %}"></script>
+		<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+		<script src="{% static 'js/owl-carousel/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'js/init.js' %}"></script>
+
 	</body>
 </html>
