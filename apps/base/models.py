@@ -12,3 +12,15 @@ class Base(models.Model):
         verbose_name = 'Базовый'
         verbose_name_plural = 'Базовые'
         
+        
+        
+        
+class Menu(models.Model):
+    name = models.CharField(max_length=250,verbose_name="название блюда")
+    description = models.TextField(verbose_name='описание')
+    price = models.CharField(max_length=250, verbose_name="цена")
+    image = models.ImageField(upload_to = "base/", verbose_name = "Изображение")
+    
+    class Meta:
+        verbose_name = 'меню'
+        verbose_name_plural = 'меню'

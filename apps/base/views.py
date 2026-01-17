@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from apps.base.models import Base
+from apps.base.models import Base,Menu
 from apps.cms.models import Settings
 
 
@@ -9,3 +9,8 @@ def index(request):
     base = Base.objects.latest("id")
     settings = Settings.objects.latest("id")
     return render(request,"index.html",locals())
+
+
+def menu(request):
+    menu = Menu.objects.all()
+    return render(request, "menu-1-col.html", {"menu": menu})
