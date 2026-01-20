@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Dina - Restaurant, Bar, Cafe, Food HTML Template</title>
+		<meta name="robots" content="noodp"/>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<!-- Bootstrap CSS -->
+		 <link rel="stylesheet" href="{% static 'assets/css/bootstrap/css/bootstrap.min.css' %}">
+		 <link rel="stylesheet" href="{% static 'assets/css/fontawesome/css/font-awesome.min.css' %}">
+		 <link rel="stylesheet" href="{% static 'assets/css/fontawesome/css/all.min.css' %}">
+		 <link rel="stylesheet" href="{% static 'assets/style.css' %}">
+		<!-- favicons -->
+		<link rel="icon" href="{% static 'assets/icons/favicon-32x32.png' %}" sizes="32x32" />
+		<link rel="icon" href="{% static 'assets/icons/favicon-192x192.png' %}" sizes="192x192" />
+		<link rel="apple-touch-icon-precomposed" href="{% static 'assets/icons/favicon-180x180.png' %}" />
+	</head>
+	<body class="body-header1">
+        {% block content %}
+
+        {% endblock %}
+
+
+
+
+        <!-- JS --> 
+		<script src="{% static 'assets/js/jquery.js' %}"></script>
+		<script src="{% static 'assets/js/jquery-migrate.min.js' %}"></script>
+		<script src="{% static 'assets/css/bootstrap/js/popper.min.js' %}"></script>
+		<script src="{% static 'css/bootstrap/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
+		<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+		<script src="{% static 'assets/js/owl-carousel/owl.carousel.min.js' %}"></script>
+		<script src="{% static 'assets/js/init.js' %}"></script>
+
+	</body>
+</html>

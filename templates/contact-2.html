@@ -1,26 +1,6 @@
+{% extends "include/homePage.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en-US">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Contact 2 - Dina</title>
-		<meta name="robots" content="noodp"/>
-		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-		<!-- Bootstrap CSS -->
-		 <link rel="stylesheet" href="{% static 'assets/css/bootstrap/css/bootstrap.min.css' %}">
-		 <link rel="stylesheet" href="{% static 'assets/css/fontawesome/css/font-awesome.min.css' %}">
-		 <link rel="stylesheet" href="{% static 'assets/css/fontawesome/css/all.min.css' %}">
-		 <link rel="stylesheet" href="{% static 'assets/style.css' %}">
-		<!-- favicons -->
-		<link rel="icon" href="images/icons/favicon-32x32.png" sizes="32x32" />
-		<link rel="icon" href="images/icons/favicon-192x192.png" sizes="192x192" />
-		<link rel="apple-touch-icon-precomposed" href="images/icons/favicon-180x180.png" />
-	</head>
-	<body class="body-header1" >
+{% block content %}
 		<!-- MOBILE MENU -->
 		<div class="mask-nav-2">
 			<!-- MENU -->
@@ -335,18 +315,34 @@
 								<!-- LEFT CONTENT -->
 								<div class="col-md-6 mobile-margin-b54">
 									<div id="contact-form-holder">
-										<form method="post" id="contact-form" action='include/contact-process.php'>
+										<form method="post" action="{% url 'contact_form' %}">
+											{% csrf_token %}
+
 											<label>Name</label>
-											<p><input type="text" name="name" class="reservation-fields" /></p>
+											<p>
+												<input type="text" name="name" class="reservation-fields" required>
+											</p>
+
 											<label>Email</label>
-											<p><input type="text" name="email" class="reservation-fields"/></p>
+											<p>
+												<input type="email" name="email" class="reservation-fields" required>
+											</p>
+
 											<label>Subject</label>
-											<p><input type="text" name="subject" class="reservation-fields" /></p>
+											<p>
+												<input type="text" name="subject" class="reservation-fields">
+											</p>
+
 											<label>Message</label>
-											<p> <textarea name="message" id="msg-contact" class="reservation-fields" rows="7"></textarea></p>
-											<p class="antispam">Leave this empty: <input type="text" name="url" /></p>
-											<p class="contact-btn"><input type="submit" value="Send message" id="submit"/></p>
+											<p>
+												<textarea name="message" class="reservation-fields" rows="7"></textarea>
+											</p>
+
+											<p class="contact-btn">
+												<input type="submit" value="Send message">
+											</p>
 										</form>
+
 									</div>
 									<!-- contact-form-holder-->
 									<div id="output-contact"></div>
@@ -432,16 +428,11 @@
 			<!--container-->
 		</footer>
 		<!-- /FOOTER -->
-		<!-- JS --> 
-		<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script  src='js/jquery.js'></script>
-		<script src="{% static 'assets/js/jquery.js' %}"></script>
-		<script src="{% static 'assets/js/jquery-migrate.min.js' %}"></script>
-		<script src="{% static 'assets/css/bootstrap/js/popper.min.js' %}"></script>
-		<script src="{% static 'css/bootstrap/js/bootstrap.min.js' %}"></script>
-		<script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
-		<script src="{% static 'assets/js/jquery.fitvids.js' %}"></script>
-		<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
-		<script src="{% static 'assets/js/owl-carousel/owl.carousel.min.js' %}"></script>
-		<script src="{% static 'assets/js/init.js' %}"></script>
-	</body>
-</html>
+
+
+
+
+
+
+
+{% endblock %}

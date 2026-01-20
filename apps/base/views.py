@@ -1,14 +1,12 @@
-from django.shortcuts import render
-from apps.base.models import Base,Menu,Contact
+from django.shortcuts import render, redirect
+from apps.base.models import Base, Menu, Contact, Contact_form
 from apps.cms.models import Settings
 
 
-# Create your views here.
-
 def index(request):
-    base = Base.objects.latest("id")
-    settings = Settings.objects.latest("id")
-    return render(request,"index.html",locals())
+    base = Base.objects.last()
+    settings = Settings.objects.last()
+    return render(request, "index.html", {"base": base,"settings": settings})
 
 
 def menu(request):
@@ -19,3 +17,22 @@ def menu(request):
 def contact(request):
     contact = Contact.objects.last()
     return render(request, "contact-2.html", {"contact": contact})
+
+
+def contact_form(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        subject = request.POST.get("subject")
+        message = request.POST.get("message")
+
+        Contact_form.objects.create(
+            name=name,
+            email=email,
+            subject=subject,
+            message=message
+        )
+
+        return redirect("contact_form") 
+
+    return render(request, "contact-2.html")
